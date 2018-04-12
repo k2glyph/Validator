@@ -8,6 +8,7 @@ or
 `yarn add client-side-validator`
 ## Usage
 
+### ES5
 ```
 var clientSideValidator = require("client-side-validator");
 
@@ -15,6 +16,14 @@ var FIELDS=clientSideValidator.FIELDS;
 var validator=clientSideValidator.validator;
 var fieldValues= [{ key: 'sender', type: FIELDS.PHONENUMBER, value:'98' },{ key: 'email', type: FIELDS.EMAIL, value:'medineshkatwal@gmail.com' }]
 var response = validator(fieldValues, {});
+console.log(response)
+```
+### ES6
+```
+import { validator, FIELDS } from 'client-side-validator';
+
+const fieldValues= [{ key: 'sender', type: FIELDS.PHONENUMBER, value:'98' },{ key: 'email', type: FIELDS.EMAIL, value:'medineshkatwal@gmail.com' }]
+const response = validator(fieldValues, {});
 console.log(response)
 ```
 
