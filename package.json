@@ -1,5 +1,5 @@
 {
-  "name": "validator",
+  "name": "client-side-validator",
   "version": "0.1.0",
   "description": "Simple Inline validator or utility library for making developer life easier",
   "main": "index.js",
@@ -10,7 +10,8 @@
     "Validator",
     "inline-validator",
     "react-validator",
-    "react-native-validator"
+    "react-native-validator",
+    "client-side-validator"
   ],
   "engines": {
     "node": ">=4.2.4"

@@ -1,4 +1,4 @@
-Validator
+Client-Side-Validator
 =========
 
 A small library that can validate Domain, Email, Text, PhoneNumber for now.
