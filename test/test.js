@@ -1,11 +1,9 @@
 'use strict';
 
 var expect = require('chai').expect;
-var _index = require('../index');
-
+var FIELDS = require('../index').FIELDS;
+var validator=require('../index').validator;
 describe('#Validate', function() {
-    var FIELDS=_index.FIELDS;
-    var validator=_index.validator;
     it('Expected Phone Number is Required', function() {
         var fieldValues= [{ key: 'sender', type: FIELDS.PHONENUMBER, value:'' }]
         var response = validator(fieldValues, {});
