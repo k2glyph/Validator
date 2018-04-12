@@ -1,6 +1,6 @@
 {
   "name": "client-side-validator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple Inline validator or utility library for making developer life easier",
   "main": "index.js",
   "engines": {
