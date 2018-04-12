@@ -9,17 +9,17 @@ var defaultMessage = {
 };
 var rules = {
     Email: {
-        regex: '/^[\\w]*\\@[\\w]*\\.[a-z]{2,6}$/g',
+        regex: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
         onEmpty: 'Email ' + defaultMessage.onEmpty,
         notValid: 'Email ' + defaultMessage.notValid
     },
     Domain: {
-        regex: '/^[\\w]*\\.[a-z]{2,6}$/g',
+        regex: /^[\w]*\.[a-z]{2,6}$/,
         onEmpty: 'Domain ' + defaultMessage.onEmpty,
         notValid: 'Domain ' + defaultMessage.notValid
     },
     Phonenumber: {
-        regex: '/^[\\d]{10,12}$/g',
+        regex: /^[\d]{10,12}$/,
         onEmpty: 'Phone Number ' + defaultMessage.onEmpty,
         notValid: 'Phone Number ' + defaultMessage.notValid
     },
