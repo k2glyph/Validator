@@ -12,6 +12,24 @@ describe('#Validate', function() {
         expect(response.errors.sender).to.equal('sender Phone Number is Required');
         expect(response.isValid).to.equal(false);
     });
+    it('Expected Phone Number is Required By value undefined', function() {
+        var fieldValues= [{ key: 'sender', type: FIELDS.PHONENUMBER, value:undefined }]
+        var response = validator(fieldValues, {});
+        expect(response.errors.sender).to.equal('sender Phone Number is Required');
+        expect(response.isValid).to.equal(false);
+    });
+    it('Expected Phone Number is Required By value null', function() {
+        var fieldValues= [{ key: 'sender', type: FIELDS.PHONENUMBER, value:null }]
+        var response = validator(fieldValues, {});
+        expect(response.errors.sender).to.equal('sender Phone Number is Required');
+        expect(response.isValid).to.equal(false);
+    });
+    it('Expected no error while type is null || undefined', function() {
+        var fieldValues= [{ key: 'sender', type: null, value:null }]
+        var response = validator(fieldValues, {});
+        expect(response.errors).to.equal('');
+        expect(response.isValid).to.equal(true);
+    });
     it('Expected Phone Number is not valid', function() {
         var fieldValues= [{ key: 'sender', type: FIELDS.PHONENUMBER, value:'98' }]
         var response = validator(fieldValues, {});
