@@ -16,7 +16,8 @@ var FIELDS = exports.FIELDS = {
     DOMAIN: 'DOMAIN',
     EMAIL: 'EMAIL',
     PHONENUMBER: 'PHONENUMBER',
-    TEXT: 'TEXT'
+    TEXT: 'TEXT',
+    NUMBER: 'NUMBER'
 };
 function validate(errors, field, check) {
     var key = field.key;var value = field.value;var isValid = true;
@@ -47,6 +48,9 @@ function validator(fieldValues, defaultErrors) {
                 break;
             case FIELDS.PHONENUMBER:
                 response = validate(errors, field, _rules2.default.Phonenumber);
+                break;
+            case FIELDS.NUMBER:
+                response = validate(errors, field, _rules2.default.Number);
                 break;
             default:
                 break;

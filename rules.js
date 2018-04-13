@@ -25,6 +25,11 @@ var rules = {
     },
     Text: {
         onEmpty: 'Text ' + defaultMessage.onEmpty
+    },
+    Number: {
+        regex: /^\d+$/,
+        onEmpty: 'Number '+ defaultMessage.onEmpty,
+        notValid: 'Number '+ defaultMessage.notValid
     }
 
 };

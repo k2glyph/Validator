@@ -77,4 +77,23 @@ describe('#Validate', function() {
         expect(response.isValid).to.equal(true);
     });
    
+    it('Expected Number is Required', function() {
+        var fieldValues= [{ key: 'Domain', type: FIELDS.NUMBER, value: null }]
+        var response = validator(fieldValues, {});
+        expect(response.errors.Domain).to.equal('Domain Number is Required');
+        expect(response.isValid).to.equal(false);
+    });
+    it('Expected Number is not valid', function() {
+        var fieldValues= [{ key: 'Domain', type: FIELDS.NUMBER, value: 'null' }]
+        var response = validator(fieldValues, {});
+        expect(response.errors.Domain).to.equal('Domain Number is not valid');
+        expect(response.isValid).to.equal(false);
+    });
+    it('Expected Number is valid', function() {
+        var fieldValues= [{ key: 'Domain', type: FIELDS.NUMBER, value: 10000 }]
+        var response = validator(fieldValues, {});
+        expect(response.errors.Domain).to.equal('');
+        expect(response.isValid).to.equal(true);
+    });
+   
 });
