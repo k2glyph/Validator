@@ -31,8 +31,8 @@ function validate(errors, field, check) {
     return { errors: errors, isValid: isValid };
 }
 
-function validator(fieldValues, defaultErrors) {
-    var errors = defaultErrors;
+function validator(fieldValues) {
+    var errors={};
     var isValid = true;
     var response = { errors: '', isValid: true };
     fieldValues.map(function (field) {
