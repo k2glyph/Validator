@@ -1,7 +1,15 @@
 Client-Side-Validator [![Build Status](https://travis-ci.org/k2glyph/Validator.svg?branch=master)](https://travis-ci.org/k2glyph/Validator)
 ======================
 
-A small library that can validate Domain, Email, Text, PhoneNumber for now.
+A small library for validation stuff.
+
+## Feature:
+1. Domain Validation
+2. Email Validation
+3. Text Validation
+4. Phone Number Validation
+5. Number Validation
+
 ## Installation
 `npm install client-side-validator`
 or 
