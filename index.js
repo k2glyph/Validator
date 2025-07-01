@@ -17,7 +17,8 @@ var FIELDS = exports.FIELDS = {
     EMAIL: 'EMAIL',
     PHONENUMBER: 'PHONENUMBER',
     TEXT: 'TEXT',
-    NUMBER: 'NUMBER'
+    NUMBER: 'NUMBER',
+    PASSWORD: 'PASSWORD'
 };
 function validate(errors, field, check) {
     var key = field.key;var value = field.value;var isValid = true;
