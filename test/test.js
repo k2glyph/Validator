@@ -95,5 +95,41 @@ describe('#Validate', function() {
         expect(response.errors.Domain).to.equal('');
         expect(response.isValid).to.equal(true);
     });
+    it('Expected Password is Required', function() {
+        var fieldValues= [{ key: 'Password', type: FIELDS.PASSWORD, value:'' }]
+        var response = validator(fieldValues);
+        expect(response.errors.Password).to.equal('Password is Required');
+        expect(response.isValid).to.equal(false);
+    });
+    it('Expected Password is not valid (too short)', function() {
+        var fieldValues= [{ key: 'Password', type: FIELDS.PASSWORD, value:'Pass1' }]
+        var response = validator(fieldValues);
+        expect(response.errors.Password).to.equal('Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number');
+        expect(response.isValid).to.equal(false);
+    });
+    it('Expected Password is not valid (no uppercase)', function() {
+        var fieldValues= [{ key: 'Password', type: FIELDS.PASSWORD, value:'password123' }]
+        var response = validator(fieldValues);
+        expect(response.errors.Password).to.equal('Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number');
+        expect(response.isValid).to.equal(false);
+    });
+    it('Expected Password is not valid (no lowercase)', function() {
+        var fieldValues= [{ key: 'Password', type: FIELDS.PASSWORD, value:'PASSWORD123' }]
+        var response = validator(fieldValues);
+        expect(response.errors.Password).to.equal('Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number');
+        expect(response.isValid).to.equal(false);
+    });
+    it('Expected Password is not valid (no number)', function() {
+        var fieldValues= [{ key: 'Password', type: FIELDS.PASSWORD, value:'PasswordAbc' }]
+        var response = validator(fieldValues);
+        expect(response.errors.Password).to.equal('Password must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, and one number');
+        expect(response.isValid).to.equal(false);
+    });
+    it('Expected Password is valid', function() {
+        var fieldValues= [{ key: 'Password', type: FIELDS.PASSWORD, value:'Password123' }]
+        var response = validator(fieldValues);
+        expect(response.errors.Password).to.equal('');
+        expect(response.isValid).to.equal(true);
+    });
    
 });
